@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.tabletopgames</groupId>
+    <artifactId>TabletopGames</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <okaeri.version>6.1.0-beta.1</okaeri.version>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>repo-lanink-cn</id>
+            <url>https://repo.lanink.cn/repository/maven-public/</url>
+        </repository>
+        <repository>
+            <id>okaeri-releases</id>
+            <url>https://repo.okaeri.cloud/releases</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>cn.nukkit</groupId>
+            <artifactId>Nukkit</artifactId>
+            <version>MOT-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- 配置库：Nukkit-MOT 已内置 okaeri-configs 6.1.0-beta.1（含 snakeyaml），
+             这里只按 provided 编译，运行期由服务端提供，不再 shade 打包。 -->
+        <dependency>
+            <groupId>eu.okaeri</groupId>
+            <artifactId>okaeri-configs-yaml-snakeyaml</artifactId>
+            <version>${okaeri.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- 经济插件（EconomyAPI）通过反射接入（见 com.tabletopgames.economy.EconomyHook），
+             不产生编译期依赖，运行期缺失也不影响插件加载。 -->
+
+        <!-- SQLite 驱动不在本插件内：由服务器上的 OrmLite 插件提供
+             （plugin.yml depend: OrmLite，与 Territory 同一套做法）。 -->
+    </dependencies>
+
+    <build>
+        <finalName>${project.artifactId}-${project.version}</finalName>
+    </build>
+</project>

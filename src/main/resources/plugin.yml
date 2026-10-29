@@ -1,0 +1,20 @@
+name: TabletopGames
+main: com.tabletopgames.TabletopGamesPlugin
+version: "1.0.0-SNAPSHOT"
+api: ["1.0.0"]
+author: MysteriousHim
+description: 休闲游戏合集（五子棋 / 中国象棋 / 斗兽棋 / 黑白棋 / 围棋 / 军旗 / UNO / 斗地主）
+load: STARTUP
+# 强依赖经济插件与 OrmLite（后者提供 SQLite 驱动）：缺失时 Nukkit 直接拒绝加载本插件
+depend: [EconomyAPI, OrmLite]
+
+commands:
+  tabletopgames:
+    description: 打开插件设置表单 / 重载配置
+    usage: "/tabletopgames [settings|reload]"
+    permission: tabletopgames.command
+
+permissions:
+  tabletopgames.command:
+    description: 允许使用 /tabletopgames 命令（设置表单 / 重载配置）
+    default: op

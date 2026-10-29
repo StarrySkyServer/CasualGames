@@ -1,0 +1,35 @@
+target/*
+*.class
+*.jar
+!target/*.jar
+
+.idea/
+*.iml
+.vscode/
+.settings/
+.classpath
+.project
+
+.DS_Store
+Thumbs.db
+# 编辑器/本地临时产物（不入库）
+.trae/
+_scratch/
+_jartmp/
+_resbak/
+_archive/
+_probe/
+_xiangqi_palette_preview.png
+_xiangqi_pieces_preview.png
+build_out.txt
+build_check.txt
+
+# javac 在中文路径下偶发落盘的参数文件（编译诊断用，可随时重生成）
+javac.*.args
+# 服务端日志目录（本地跑 MOT 时产生）
+/logs/
+
+# 本地构建 / 反编译 / 校验工具链（仅本地使用，不公开）
+/tools/
+__pycache__/
+*.pyc

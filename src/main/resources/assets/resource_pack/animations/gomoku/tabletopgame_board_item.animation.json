@@ -1,0 +1,1 @@
+{"format_version":"1.8.0","animations":{"animation.tabletopgame.board_item.first_person":{"loop":true,"bones":{"board":{"rotation":[31.2871,6.4986,-116.1917],"position":[14.98529,15.2741,8.89202],"scale":0.7}}},"animation.tabletopgame.board_item.third_person":{"loop":true,"bones":{"board":{"rotation":[13.3725,-3.4841,-3.7075],"position":[0,16.69866,-0.88469],"scale":0.42}}}}}

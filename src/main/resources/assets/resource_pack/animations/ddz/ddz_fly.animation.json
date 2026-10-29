@@ -1,0 +1,1 @@
+{"format_version":"1.8.0","animations":{"animation.tabletopgame.ddz.fly":{"loop":true,"bones":{"fly":{"position":["(v.tx*v.fg)","4.148654","(v.tz*v.fg)"],"rotation":["65","(v.fj==1?180:(v.fj==2?-90:0))",0],"scale":"v.fgo"}}}}}
